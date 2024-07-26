@@ -1,0 +1,7 @@
+@import "../../base/colors";
+@import "../../base/default-fonts";
+
+.underline-button {
+  &:hover { font-size: 14px; font-family: $primary-font, $primary-default-font; text-align: left; background-color: transparent; border: none; color: $primary-light; border-bottom: 2px solid $primary-light; }
+  &:disabled { cursor: not-allowed; }
+}

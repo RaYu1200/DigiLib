@@ -1,0 +1,8 @@
+@import "../../base/colors";
+@import "../../base/default-fonts";
+
+.textual-button { color: $primary-light; background: transparent; border: none; font-family: $primary-font-regular, $primary-default-font; height: auto; width: auto; padding: 0;
+  cursor: pointer;
+  &:hover { color: $primary-dark; border-bottom: 1px solid $primary-dark; }
+  &:disabled{ color: $grey; cursor: not-allowed; border-bottom: 1px solid transparent;}
+}

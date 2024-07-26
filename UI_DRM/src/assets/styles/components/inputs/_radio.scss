@@ -1,0 +1,17 @@
+@import "../../base/colors";
+
+:host ::ng-deep {
+  .p-radiobutton {
+    .p-radiobutton-box { width: 14px; height: 14px;
+      &.p-highlight {
+        &:not(.p-disabled).p-focus {box-shadow: none;}
+      }
+      & .p-radiobutton-icon { width: 8px; height: 8px;}
+      &.p-highlight {background-color: $primary-light; border-color: $primary-light;
+        &:not(.p-disabled) {background-color: $primary-light; border-color: $primary-light;}
+        &:not(.p-disabled):hover {background-color: $primary-light; border-color: $primary-light;}
+      }
+    }
+  }
+  .alert { padding: 5px }
+}

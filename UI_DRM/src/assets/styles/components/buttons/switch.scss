@@ -1,0 +1,38 @@
+@import "../../base/colors";
+@import "../../base/default-fonts";
+
+$switch-width: 69px;
+$switch-height: 28px;
+
+.switch { position: relative; display: inline-block; width: $switch-width; min-width: $switch-width; height: $switch-height; cursor: pointer; margin-bottom: 0;
+  input { display: none;}
+}
+
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: $grey-light; transition: .4s;
+  &:before {position: absolute; content: ""; height: 22px; width: 22px; left: 3px; bottom: 3px; background-color: $background-white; transition: .4s;}
+}
+
+input:checked + .slider {
+  background-color: $slider-checked;
+}
+
+
+input:checked + .slider:before {
+  left: calc(100% - 25px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: $switch-height;
+  &:before { border-radius: 50%; }
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.toggle {position: absolute; top: 50%; transform: translateY(-50%); font-size: 13px; font-family: $primary-font, $primary-default-font;}
+
+.checked-toggle { @extend .toggle; color: $background-white; left: 17px; font-family: $primary-font-regular, sans-serif; }
+.unchecked-toggle { @extend .toggle; color: $text-color; right: 17px; font-family: $primary-font-regular, sans-serif }
+

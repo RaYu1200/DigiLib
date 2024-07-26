@@ -1,0 +1,13 @@
+@import "../../base/colors";
+@import "../../base/default-fonts";
+
+.round-orange-button { background-color: $primary-light; width: 92px; height: 26px; font-size: 16px; font-family: $primary-font-regular, $primary-default-font; color: $background-white; text-align: center;
+  border-radius: 30px; border: none;
+  &:hover { background-color: $primary-dark; cursor: pointer; }
+  &:active { background-color: $primary-dark; }
+  &:disabled { background-color: $morph-orange-button-disabled; cursor: not-allowed;
+    &:hover { background-color: $morph-orange-button-disabled; }
+  }
+  &.long-button { width: auto; padding: 0 15px; font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, $secondary-default-font; font-size: 1em; }
+  &.color-invert{ color: $background-white; background-color: $primary-light; }
+}

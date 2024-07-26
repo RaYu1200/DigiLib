@@ -1,0 +1,28 @@
+@import "../../../../assets/styles/base/colors";
+@import "../../../../assets/styles/base/default-fonts";
+@import "../../../../assets/styles/helpers/_variables";
+
+$dropdown-label-color: #777777;
+
+:host ::ng-deep {
+  .p-dropdown {width: 100% !important; height: 36px; border: 1px solid $grey; background: $background-white; border-radius: $input-radius;
+    &.p-dropdown-open {border-color: $primary-light !important;}
+    &:not(.p-disabled):hover {border-color: $grey;
+    }
+    &:not(.p-disabled) {border-color: $grey;
+      &.p-focus {box-shadow: none;}
+    }
+    & .p-dropdown-label {font-family: $primary-font-light, $primary-default-font; color: $dropdown-label-color;}
+    &-panel {
+      & .p-dropdown-items {     font: 14px $primary-font-regular, $primary-default-font; padding-left: 0.4em; padding-right: 0.4em;
+        .p-dropdown-item { border-top: 1px solid #c8c8c8; height: auto !important; min-height: 40px !important; padding: 10px 5px !important;
+          &.p-highlight { color: #333333; background-color: transparent;
+            &:hover {color: $primary-light; }
+          }
+          &:not(.p-highlight):not(.p-disabled):hover {background-color: transparent; color: $primary-light;}
+        }
+
+      }
+    }
+  }
+}

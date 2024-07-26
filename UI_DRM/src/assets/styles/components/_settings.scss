@@ -1,0 +1,66 @@
+@import "../base/colors";
+@import "../base/default-fonts";
+@import "../../../assets/styles/components/inputs/input-control";
+@import "../../../assets/styles/helpers/_variables";
+
+// adding astrix for required fields
+.input-label-required  {
+  @include required($font-size:20px, $margin-left:2px, $line-height:20px);
+}
+
+.input-error {
+  border-color: red !important;
+}
+
+.error-wrapper {
+  position: relative; width: 100%;
+}
+
+//padding for the enable buttons on each panel
+.feature-enable {
+  margin: 15px 15px 15px 0;
+}
+
+//Background for the settings form
+.morph-settings-content { background: $background-grey-light; border: 1px solid $grey-light; padding: 15px;
+  & label {
+    font: 16px $primary-font-regular;
+  }
+}
+
+.morph-settings-form { height: $settings-tab-content-height; display: block;}
+
+
+//separate connection check buttons
+.connection-button-wrapper {
+  border-top: 1px solid $grey-light;
+}
+
+.connection-button {
+  color: $primary-light;
+  background: transparent;
+  border: none;
+}
+
+//connection button reposition
+.connection-button {
+  padding: 15px 15px 0 0;
+}
+.label-with-checkbox{
+  font: 14px $primary-font-light !important;
+}
+
+.input-full-width{
+  .ui-widget{
+    width: 100% !important;
+  }
+}
+
+.m-settings-apply-changes {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0 10px 0;
+  padding-right: 20px;
+  align-items: center;
+  & morph-textual-button {padding-right: 20px;}
+}

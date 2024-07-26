@@ -1,0 +1,97 @@
+/*Checkbox on each node*/
+@import "../../base/_colors";
+@import "../../base/default-fonts";
+
+$checkSize: 22px;
+
+//Source: http://codepen.io/CreativeJuiz/pen/BiHzp
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked,
+.morph-checkbox {
+  position: fixed;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label,
+.morph-checkbox + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  font: 16px $primary-font-regular;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 25px;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before,
+.morph-checkbox + label:before{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: $checkSize; height: $checkSize;
+  border: 1px solid $grey;
+  background: $checkbox-backgorund;
+  border-radius: 2px;
+
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after,
+.morph-checkbox + label:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: $checkSize;
+  height: $checkSize;
+  border: 1px solid $grey-light;
+  background-size: 10px 10px;
+  background: $checkbox-selected url("/../../../assets/icons/checkbox_v.svg") no-repeat center center;
+  border-radius: 2px;
+  line-height: 1.3;
+  transition: all .2s;
+  padding-left: 2px;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after,
+.morph-checkbox:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after,
+.morph-checkbox:checked + label:after{
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before,
+.morph-checkbox:disabled + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+
+[type="checkbox"]:disabled:checked + label:after,
+.morph-checkbox:disabled:checked + label:after {
+  color: #999;
+}
+
+[type="checkbox"]:disabled + label,
+.morph-checkbox:disabled + label {
+  color: #aaa;
+}
+
+/* hover style just for information */
+label:hover:before {
+  border: 1px solid $checkbox-hover !important;
+}

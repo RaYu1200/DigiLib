@@ -1,0 +1,38 @@
+.morph-primary-text-input {
+  & input { background: #FFFFFF; font-family: 'Inter-Medium', sans-serif; font-size: 14px; color: #1A1B1E; border: 1px solid #D8DBE0; border-radius: 4px; margin: 0 0; height: 34px; padding: 0 12px;
+    &:disabled {background: #F5F5F5; color: #A2A9AB;}
+  }
+  & label { margin-bottom: 5px; font-family: 'Inter-SemiBold', sans-serif; font-size: 16px; color: #1A1B1E;}
+  & .validation-errors {padding-top: 2px; font-family: 'Inter-Regular', sans-serif; font-size: 10px; line-height: normal; color: #D64A72;}
+}
+
+.morph-primary-text-area {
+  & textarea { box-sizing: border-box; background: #FFFFFF; font-family: 'Inter-Regular', sans-serif; font-size: 14px; color: #1A1B1E; border: 1px solid #D8DBE0; border-radius: 4px; margin: 0 0; height: 68px; padding: 8.5px 12px; resize: none;}
+  & label { margin-bottom: 5px; font-family: 'Inter-Regular', sans-serif; font-size: 12px; color: #1A1B1E;}
+}
+
+.morph-primary-dropdown { display: flex; align-items: flex-start;
+  & label {font-family: 'Inter-SemiBold', sans-serif; font-size: 16px; color: #1A1B1E;}
+  & .title-container { border: 1px solid #D8DBE0; background: white; padding: 5px 10px; border-radius: 4px; }
+}
+
+.morph-primary-radio-input{
+    display: grid;
+    grid-template-columns: 12px auto;
+    column-gap: 8px;
+    align-items: center;
+  input {
+    appearance: none;
+    border: 1px solid #1A1B1E;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0px;
+    background-clip: content-box;
+    padding: 1.8px;
+    cursor: pointer !important;
+
+    &:checked { background-color: #F37D20 !important; }
+  }
+  label { margin-bottom: 5px; font-family: 'Inter-Regular', sans-serif; font-size: 12px; color: #1A1B1E; margin: 0; cursor: pointer !important;}
+}

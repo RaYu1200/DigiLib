@@ -1,0 +1,9 @@
+@import "../../base/colors";
+@import "../../base/default-fonts";
+
+.orange-underline-button { background-color: transparent; border: transparent; font-size: 14px; font-family: $primary-font-regular, $primary-default-font; text-align: center; margin-left: 0; text-decoration: none;
+  color: $primary-light; border-bottom: 2px solid $primary-light;
+  &:hover {text-decoration: none; cursor: pointer;}
+  &:active {text-decoration: none;}
+  &:disabled {cursor: not-allowed;}
+}

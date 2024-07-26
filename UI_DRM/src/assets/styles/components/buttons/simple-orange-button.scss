@@ -1,0 +1,7 @@
+@import "../../base/colors";
+@import "../../base/default-fonts";
+
+.simple-orange-button { color: $primary-dark; background: transparent; border: none; font-family: $primary-font;
+  &:hover { color: $primary-dark; cursor: pointer; }
+  &:disabled{ color: $grey-light-background; cursor: not-allowed; }
+}

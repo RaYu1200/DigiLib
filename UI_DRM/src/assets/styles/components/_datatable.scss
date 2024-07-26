@@ -1,0 +1,218 @@
+/*Table design*/
+@import "../base/colors";
+@import "../base/default-fonts";
+@import "../helpers/variables";
+
+$datatable-header-height: 40px;
+$datatable-row-height: 55px;
+$splitter-color: lighten($grey, 5%);
+
+:host ::ng-deep {
+
+  /**
+  expanded-rows
+  expanded-row-label
+  expanded-row-value
+   */
+  .expanded {
+    &-rows { background-color: $background-grey-light; font-family: $primary-font-regular, $primary-default-font; font-size: 16px; padding: 20px; }
+    &-row {
+      &-label {font-weight: bold; padding: .3em;}
+      &-value {white-space: normal; padding: .3em; overflow-wrap: break-word;}
+    }
+  }
+
+  .ngx-datatable {
+    border-top: 1px solid $splitter-color;
+    border-bottom: none;
+    width: 100%;
+    height: 100%;
+    &.enable-click-row .datatable-body-row:hover {
+      background-color: #eee;
+      transition-property: background;
+      transition-duration: .3s;
+      transition-timing-function: linear;
+      cursor: pointer;
+    }
+    & .datatable-body {
+      overflow-x: hidden;
+    }
+    datatable-body-cell {
+      font-family: Montserrat-Regular, sans-serif;
+      user-select: inherit !important;
+      padding: 0 .4rem 0 15px;
+      min-width: 43px;
+    }
+  }
+  datatable-row-wrapper datatable-body-row {
+    background-color: #fafafb;
+  }
+  datatable-body-row {
+    border-bottom: 1px solid $splitter-color;
+    & a {
+      color: inherit;
+    }
+  }
+  ngx-datatable .ui-datatable-scrollable-body {
+    max-height: calc(100% - #{$datatable-header-height}) !important;
+  }
+  datatable-header {
+    background-color: $datatable-header-background;
+    height: 36px;
+    color: $text-color;
+    border-bottom: 1px solid $splitter-color;
+    padding: 0 5px;
+  }
+  datatable-header-cell {
+    color: $text-color;
+    font-size: 16px;
+    text-align: left;
+    font-family: $primary-font-medium, $primary-default-font;
+    padding: .5rem 0 0 10px;
+    min-width: 43px;
+    height: 39px;
+    & .datatable-header-cell-template-wrap {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .resize-handle {
+    padding-left: 4px;
+    padding-right: 4px;
+    border-right: 1px solid #c3c3c3;
+  }
+  .datatable-header-cell-label {
+    padding: 10px 0;
+  }
+  .datatable-body-cell-label {
+    padding: 15px 0;
+  }
+  .empty-row {
+    padding: 10px;
+  }
+  .datatable-column-menu {
+    padding-left: 10px;
+  }
+  .cog-icon {
+    color: rgba(54, 54, 54, .8);
+    cursor: pointer;
+  }
+  .numeric-column {
+    font-family: $primary-font-regular, $primary-default-font;
+  }
+  .textual-column {
+    font-family: $primary-font-regular, $primary-default-font;
+  }
+  /*Show messages for top of datatables*/
+  .datatable-toolbar {
+    font-size: 16px;
+    padding: 0 38px 0 25px;
+    white-space: nowrap;
+    position: relative;
+    height: $datatable-toolbar-height;
+    display: table;
+    width: 100%;
+    .prefix {
+      font-family: $primary-font-regular, $primary-default-font;
+      color: $text-color;
+    }
+    .count-number-light {
+      font-family: $primary-font-light, $primary-default-font;
+    }
+    .count-number-dark {
+      font-family: $primary-font-bold, $primary-default-font;
+      color: #363636;
+    }
+    .middle {
+      font-family: $primary-font-light, $primary-default-font;
+      padding-left: 5px;
+      padding-right: 1px;
+    }
+    .suffix {
+      font-family: $primary-font-light, $primary-default-font;
+      padding-left: 5px;
+    }
+    &-right {
+      position: relative;
+      right: 0;
+      width: 50%;
+      display: table-cell;
+      text-align: right;
+      vertical-align: middle;
+    }
+    &-left {
+      position: relative;
+      left: 0;
+      width: 50%;
+      display: table-cell;
+      text-align: left;
+      vertical-align: middle;
+      font-size: 14px;
+    }
+  }
+  .action-menu {
+    cursor: pointer;
+  }
+  .datatable-wrapper {
+    font-family: $primary-font-light, $primary-default-font;
+    position: relative;
+    height: calc(100% - #{$datatable-toolbar-height}); //the top distance plus the pagination height
+    .show-log-btn {
+      font-family: $primary-font-light, $primary-default-font;
+      color: $primary-light;
+      background: transparent;
+      border: none;
+      width: auto;
+      padding: 10px 0;
+    }
+    .ui-widget-content a {
+      text-decoration: none;
+    }
+    tr:not(.ui-widget-content) td {
+      border: 1px solid $primary-light;
+    }
+    .ui-datatable-thead tr {
+      border-width: 1px !important;
+    }
+    .sort-btn {
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      font: normal normal normal 1em FontAwesome;
+    }
+    .datatable-icon-down:before {
+      content: "   \F0DD";
+      white-space: pre;
+      display: inline-block;
+      margin-bottom: .5em;
+    }
+    .datatable-icon-up:before {
+      content: "   \F0DE";
+      white-space: pre;
+      display: inline-block;
+      margin-top: .4em;
+    }
+  }
+
+  .skeleton {
+    background: linear-gradient(90deg, #e6e6e6b3, #c7c7c7a1, #e6e6e6b3);
+    animation-name: loadSkeleton;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    background-size: 200% 100%;
+    height: 40%;
+    width: 70%;
+    border-radius: 6px;
+  }
+
+  @keyframes loadSkeleton {
+    from {
+        background-position: 100% 0;
+    }
+    to {
+        background-position: -100% 0;
+    }
+  }
+
+}

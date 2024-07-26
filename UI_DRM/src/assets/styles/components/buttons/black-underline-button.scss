@@ -1,0 +1,8 @@
+@import "../../base/colors";
+@import "../../base/default-fonts";
+
+.black-underline-button { background-color: transparent; border: transparent; font-size: 14px; font-family: $primary-font-regular, $primary-default-font; color: $button-text-color; text-align: center; margin-left: 0;
+  &:hover {text-decoration: underline; cursor: pointer}
+  &:active {color: $text-color; text-decoration: underline;}
+  &:disabled {cursor: not-allowed;}
+}

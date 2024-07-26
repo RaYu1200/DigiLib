@@ -1,0 +1,27 @@
+
+<div class="dashboard">
+
+    <div class="toolbar">
+        <mat-toolbar>
+            <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+              <mat-icon>menu</mat-icon>
+            </button> -->
+            <span>Fox Valley Preservation</span>
+
+            <button mat-flat-button (click)="upload()">Uploader</button>
+            <button mat-flat-button (click)="search()">Search </button>
+
+            <span class="example-spacer"></span>
+            <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+              <mat-icon>favorite</mat-icon>
+            </button> -->
+            <button mat-icon-button class="user-icon" aria-label="Example icon-button with share icon">
+              <mat-icon>person</mat-icon>
+            </button>
+          </mat-toolbar>
+    </div>
+    <div class="router-outlet">
+    <router-outlet></router-outlet>
+
+    </div>
+</div>

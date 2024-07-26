@@ -1,0 +1,19 @@
+@import "../../../assets/styles/base/colors";
+
+.splitter {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: $grey-light;
+  height: 1px;
+}
+
+.splitter-relative {
+  position: relative;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: $grey-light;
+  height: 1px;
+}

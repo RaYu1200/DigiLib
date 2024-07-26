@@ -1,0 +1,88 @@
+$small-screen: 1024px;
+$sidebar-width: 116px;
+$msc3-sidebar-max-width: 500px;  // for now it includes also the navbar part (but we will move the navbar later to the top
+$sidebar-item-height: 175px;
+$footer-height: 0px;
+$topbar-height: 51px;
+$shell-left-margin: 0px; /* 20ox; */
+$max-screen-width: 1500px;
+
+$table-top: 280px;
+$page-top-margin: 20px;
+$table-bottom-space: 90px;
+
+$close-sidebar-z-index: 500;
+$open-sidebar-z-index:50;
+$footer-z-index: 501;
+$box-z-index: 600;
+
+// for attacks:
+$attack-main-topbar-height: 51px;
+$top-attacks-width: 375px;
+$attacks-graph-height: 318px;
+
+$datatable-toolbar-height: 50px;
+
+// for threats (the new attacks design page)
+$threat-main-topbar-height: 70px;
+$threat-graph-height: 318px;
+$threat-selected-bar-arrow-height: 25px;
+
+// for distribution tables
+$distribution-tables-topbar-height: 50px;
+$dist-table-header-height: 50px;
+$dist-table-content-height: 450px;
+$dist-table-item-font-size: 12px;
+$dist-table-topbar-label-font-size: 20px;
+$dist-table-topbar-label-font-color: #34495e;
+$progress-bar-height: 3px;
+
+// for threat list
+$attack-list-filters-container: 78px;
+
+// for detections
+$detection-main-topbar-height: 51px;
+$detections-graph-height: 328px;
+$top-detections-width: 400px;
+
+// for plans list
+$plans-list-header: 51px;
+
+//for dashboard
+$protectors-component: 170px;
+
+// for textarea, input fields, dropdowns
+$input-radius: 10px;
+
+
+// dashboard
+$dashboard-graph-title-height: 60px;
+$dashboard-protectors-panel-height: 196px;
+$dashboard-attacks-graph-height: 300px;
+$dashboard-circles-graph-height: 90px;
+$dashboard-5-top-title-height: 63px;
+$dashboard-5-top-body-height: 250px;
+
+// threat details
+$attack-trajectory-height: 307px;
+
+//--------------- dropdown -------------------------- //
+$dropdown-height: 28px;
+$dropdown-label-font-size: 14px;
+
+// settings
+$settings-header-height: 51px;
+$settings-nav-bar-height: 65px;
+$settings-tab-content-margin-top: 30px;
+$settings-tab-content-height: calc(100vh - #{$topbar-height} - #{$settings-header-height} - #{$settings-nav-bar-height} - #{$settings-tab-content-margin-top});
+
+// customers
+$customers-topbar-height: 90px;
+
+// ----------------- media queries ---------------------
+$mini-view: "(max-width: 767px)";
+$small-view: "(min-width: 768px) and (max-width: 991px)";
+$medium-view: "(min-width: 992px) and (max-width: 1199px)";
+$large-view: "(min-width: 1200px)";
+
+$medium-screen-down: "(max-width: 1199px)";

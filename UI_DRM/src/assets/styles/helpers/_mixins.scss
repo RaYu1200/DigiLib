@@ -1,0 +1,124 @@
+@import "../base/colors";
+
+/*How to use:
+<div class=some-custom-class">
+  <div class="box-content">
+      //Any content you want to put in the box
+  </div>
+</div>
+
+In your scss file:
+
+.some-custom-class {
+ @include box-layout(...);
+}
+
+*/
+
+//Helper method for drawing the arrow of the box
+@mixin box-arrow($direction: "top",$arrow-size: 7px,$arrow-color:$primary-light,$triangle-position:50%) {
+  content: " ";
+  position: absolute;
+  @if $direction == "top" {
+    bottom: 100%;
+    left: $triangle-position;
+    margin-left: $arrow-size * -1;
+    border: $arrow-size solid transparent;border-bottom-color: $arrow-color;
+  } @else if $direction == "left" {
+    top: $triangle-position;
+    right: 100%;
+    margin-top: $arrow-size* -1;
+    border: $arrow-size solid transparent;border-right-color: $arrow-color;
+  } @else if $direction == "right" {
+    top: $triangle-position;
+    left: 100%;
+    margin-top: $arrow-size* -1;
+    border: $arrow-size solid transparent;border-left-color: $arrow-color;
+  } @else if $direction == "bottom" {
+    top: 100%;
+    left: $triangle-position;
+    margin-left: $arrow-size* -1;
+    border: $arrow-size solid transparent;border-top-color: $arrow-color;
+  }
+}
+
+//Mixin for creating box with arrow pointing to one of the 4 directions (top,left,right and bottom)
+@mixin box-layout($direction: "top",$width:auto ,$height:400px,$triangle-position:50%, $position-type:absolute, $includeArrow:true) {
+
+  //The content of the box
+  & .box-content {
+    width: $width;
+    height: $height;
+    z-index: 2;
+    position: $position-type;
+    display: inline-block;
+    background-color: $background-grey-light;
+
+    @if $direction == "top" {
+      border-top: 1px solid $primary-light;
+      border-radius: 0 0 3px 3px;
+      @if $includeArrow {
+        //The outer triangle
+        &:before {
+          @include box-arrow("bottom", $arrow-color: $secondary-red, $triangle-position: $triangle-position);
+        }
+
+        //The inner triangle
+        &:after {
+          @include box-arrow("bottom", $arrow-color: $secondary-red, $triangle-position: $triangle-position);
+        }
+      }
+    } @else if $direction == "left" {
+      border-left: 1px solid $primary-light;
+      border-radius: 0 3px 3px 0;
+    } @else if $direction == "right" {
+      border-right: 1px solid $primary-light;
+      border-radius: 3px 0 0 3px;
+    } @else if $direction == "bottom" {
+      border-bottom: 1px solid $primary-light;
+      border-radius: 3px;
+      @if $includeArrow {
+        //The outer triangle
+        &:before {
+          @include box-arrow("top", $arrow-color: $secondary-red, $triangle-position: $triangle-position);
+        }
+
+        //The inner triangle
+        &:after {
+          @include box-arrow("top", $arrow-color: $secondary-red, $triangle-position: $triangle-position);
+        }
+      }
+    }
+  }
+}
+
+@mixin truncateText($overflow: ellipsis) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: $overflow; // values are: clip, ellipsis, or a string
+}
+
+@mixin helper-orientation($direction: right, $width: 300px, $top: 26px, $offset:-10px) {
+  .help-button .tooltip-wrapper {
+    width: $width;
+    top: $top;
+    @if $direction == right {
+      left: $offset;
+    } @else if $direction == left {
+      left: $offset;
+    }
+  }
+
+  .help-button .box-content:before {
+    @if $direction == right {
+      left: 6% !important;
+    } @else if $direction == left {
+      left: 10% !important;
+    }
+  }
+}
+
+@mixin disable-select() {
+  user-select: none;
+}
+

@@ -1,0 +1,71 @@
+@import "../../helpers/_mixins";
+@import "../../base/default-fonts";
+
+.morph-input-alert {
+  @include box-layout("top",auto,27px,$position-type:relative, $includeArrow: true);
+  position: absolute;
+  bottom: 90%;
+
+  &-bottom{
+    @include box-layout("bottom",auto,27px,$position-type:relative, $includeArrow: true);
+    position: absolute;
+    top: 90%;
+  }
+
+  & .box-content,
+  &-bottom .box-content{
+    height: auto;
+    padding: 5px 10px;
+    white-space: nowrap;
+    background-color: $secondary-red;
+  }
+
+  & span,
+  &-bottom span{
+    position: inherit;
+    bottom: 2px;
+    font-size: 12px;
+    font-family: $primary-font-regular, $primary-default-font;
+    font-weight: normal;
+    color: $background-grey-light;
+    white-space: pre;
+    padding: 0;
+    display: block;
+  }
+
+  .morph-field-error {
+    display: none;
+    &:first-child {
+      display: block;
+    }
+  }
+
+}
+
+.morph-fileinput-alert {
+  @include box-layout("top",auto,27px,$position-type:relative, $includeArrow: true);
+  position: absolute;
+  margin-top: 40px;
+
+  & .box-content {
+    padding: 5px;
+    white-space: nowrap;
+    background-color: $secondary-red;
+    border-radius: 3px;
+  }
+
+  & .box-content:before,
+  & .box-content:after {
+    border-color: transparent transparent $secondary-red transparent;
+  }
+
+  & span {
+    position: inherit;
+    bottom: 2px;
+    padding: 0 10px 0 10px;
+    font-size: 12px;
+    font-family: $primary-font-regular, $primary-default-font;
+    font-weight: normal;
+    color: $background-grey-light;
+  }
+}

@@ -1,0 +1,10 @@
+@import "../helpers/variables";
+@import "../base/colors";
+@import "../base/default-fonts";
+
+
+$dialog-close-button-size: 18px;
+$dialog-footer-height: 3em;
+$dialog-header-height: 5em;
+
+@mixin dialog-size($dialog-height,$dialog-width,$dialog-title-height) {}

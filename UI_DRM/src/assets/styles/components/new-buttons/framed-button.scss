@@ -1,0 +1,11 @@
+@import "../../base/colors";
+@import "../../base/default-fonts";
+
+.framed-button { width: auto; height: 36px; border: none; border-radius: 17px; font-family: $primary-font-light, $primary-default-font; font-size: 16px;
+  &-primary { background-color: $primary-light; color: white;
+    &:hover { background-color: $primary-dark; }
+  }
+  &-secondary { background-color: $grey-light-background; color: $primary-dark;
+    &:hover { background-color: $primary-light; color: white; }
+  }
+}

@@ -1,0 +1,37 @@
+@import "../../base/colors";
+@import "../../base/default-fonts";
+@import "../../helpers/_variables";
+
+:host ::ng-deep {
+
+  p-calendar {
+    height: 36px; width: 100%;
+    .ui-inputtext { font-weight: normal; font-size: 13px; font-family: $primary-font-light, $primary-default-font;
+                    width: auto; padding: 3px 7px; cursor: pointer; border-radius: $input-radius; border-color: $grey;
+      &:enabled:hover:not(.ui-state-error) {border-color: $grey;}
+      &:enabled:focus:not(.ui-state-error) {box-shadow: none; border-color: $primary-light;}
+      &:focus{ border-color: $primary-light; border-radius: $input-radius; box-shadow: none;}
+    }
+    .ui-calendar{ width: inherit; height: inherit; border-radius: $input-radius;
+      &.ui-calendar-w-btn {
+        & input { width: inherit; height: inherit; text-overflow: ellipsis; white-space: nowrap;
+                  overflow: hidden; border-right: 1px solid $grey;}
+        & .ui-inputtext:enabled:hover:not(.ui-state-error) { border-right: 1px solid $grey;}
+        & .ui-inputtext:enabled:focus:not(.ui-state-error) { border-right: 1px solid $primary-light;}
+      }
+      .ui-button,
+      .ui-button:enabled:hover { background-color: transparent;  border-color: transparent;
+        .ui-button-icon-left { color: $primary-light; font-size: 16px; top: 53%; }
+      }
+      .ui-button:enabled:focus {
+        box-shadow: none;
+      }
+    }
+    .ui-datepicker table td {padding: 0;}
+    .ui-datepicker-trigger { height: 100%; right: -1px; position: absolute;
+      &.ui-widget {
+        .ui-datepicker-calendar td a.ui-state-active { background-color: $primary-light; }
+      }
+    }
+  }
+}

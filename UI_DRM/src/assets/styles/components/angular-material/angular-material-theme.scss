@@ -1,0 +1,12 @@
+
+$morph-primary: mat-palette(#7f2764);
+$morph-accent: mat-palette(#6b2054);
+$morph-warn: mat-palette(#d04a58);
+$morph-foreground: mat-palette(#777777);
+$morph-background: mat-palette(#f8f9fa);
+
+$morph-theme: mat-light-theme($morph-primary, $morph-accent, $morph-warn, $morph-foreground, $morph-background);
+
+@include angular-material-theme($morph-theme);
+
+

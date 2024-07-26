@@ -1,0 +1,7 @@
+@import "../../base/colors";
+@import "../../base/default-fonts";
+
+.orange-button { background-color: transparent; border: transparent; text-align: center; margin-left: 0; color: $primary-light; font: 16px $primary-font-medium, $primary-default-font !important;
+  cursor: pointer;
+  &-disabled { color: $morph-orange-button-disabled; cursor: default;}
+}

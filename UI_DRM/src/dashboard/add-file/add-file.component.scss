@@ -1,0 +1,127 @@
+.metadata-file {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .additional-data{
+        // display: flex;
+        // align-items: center;
+
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 24px;
+        .form-label{
+            font-family: 'Inter-Regular', sans-serif; 
+            font-size: 12px;
+            font-weight: 400;
+            margin-top: 6px;
+        }
+        .form-item{
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            .mat-standard-chip {
+                padding: 4px 8px !important;
+                border-radius: 4px !important;
+                min-height: 25px !important;
+                border: 1px solid #D8DBE0;
+                background-color: #EFF2F5;
+            }
+            .mat-chip.mat-standard-chip::after {
+                background: none;
+              }
+            .action-x{
+                margin-left: 20px;
+            }
+        }
+        ::ng-deep
+        {
+            .mat-chip-list-wrapper{
+                background-color: #FFFFFF; 
+                font-size: 14px; 
+                color: #A2A9AB;; 
+                border: 1px solid #D8DBE0; 
+                border-radius: 4px; 
+                margin: 0 0 !important; 
+                padding: 0px 8px;
+                width: 642px;
+                .mat-chip-input{
+                    height: 26px !important;
+                    caret-color: #A2A9AB !important ;
+                }
+            }
+            .mat-chip-list-wrapper:focus{
+                background-color: #ff8740;
+            }
+            .mat-form-field-appearance-legacy .mat-form-field-label {
+                color: #D8DBE0 !important;
+                padding: 11px;
+                left: 2px;
+            }
+            .mat-form-field-wrapper, .mat-form-field-wrapper{
+                padding-bottom: 0px !important;
+            }
+            .mat-form-field-infix{
+                margin-top: -20px;
+            }
+            .mat-form-field-underline {
+                display: none;
+            }
+            .mat-focused{
+                .mat-chip-list-wrapper{
+                    border-color: #67788C;
+                }
+            }
+        }
+    }
+
+
+    .wrapper{
+        width: fit-content;
+    }
+
+    .label {
+        margin-bottom: 150px;
+        font-family: 'Inter-Regular', sans-serif;
+        font-size: 12px;
+        color: #1A1B1E;
+    }
+
+    .file-wrapper {
+        padding: 17px 24px ;
+        background-color: #F5F5F5;
+        // height: 170px;
+        border-radius: 20px;
+
+
+        .upload{
+            margin-top: 20px;
+        }
+        .file-placeholder {
+            padding: 20px;
+            height: 170px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: inherit;
+            border: 1px dashed #D8DBE0;
+            border-radius: 5px;
+
+            .clickable {
+                cursor: pointer;
+                text-decoration: underline;
+                font-family: "Inter-SemiBold", sans-serif;
+
+                :hover {
+                    font-family: "Inter-Medium", sans-serif;
+                }
+            }
+        }
+    }
+
+}
+
+
+.file-placeholder {
+    min-width: 507px;
+}

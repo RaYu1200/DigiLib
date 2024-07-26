@@ -1,0 +1,64 @@
+<div class="metadata-file">
+    <form [formGroup]="uploadForm">
+        <div class="wrapper">
+            <div class="file-wrapper">
+                <input type="file" #file hidden (change)="metadataFile($event, 'fileUploaded')"
+                    accept=".xml,.pdf,.jpeg,.jpg,.png,.mp3,.doc">
+                <div morphDropFile class="file-placeholder" (onFileDropped)="metadataFile($event, 'fileDropped')">
+                    <div *ngIf='metaDataFileName.length === 0'>
+                        <span (click)="file.click()" class="clickable">Click</span> or drop pdf/jpeg/jpg/png/mp3/mp4/mkv file to
+                        upload
+                        in database
+                    </div>
+                    <div *ngIf="metaDataFileName.length > 0">{{metaDataFileName}}</div>
+                </div>
+            </div>
+
+            <div class="additional-data">
+                <div class="keywords">
+                    <!-- <ng-container *ngIf="notificationsSettingsForm.controls['isSecurityEventEnabled'].value" class="notification-container"> -->
+                    <label class="form-label">Add Kewords:</label>
+                    <div class="form-item">
+                        <mat-form-field>
+                            <mat-chip-grid #chipGrid aria-label="Enter keywords" formControName="removeKeyword">
+                                <mat-chip-row
+                                    *ngFor="let keyword of uploadForm.controls['keywords'].value; let i = index"
+                                    (removed)="removeKeyword(i)">
+                                    {{keyword}}
+                                    <button matChipRemove aria-label="'remove ' + keyword">
+                                        <mat-icon>cancel</mat-icon>
+                                    </button>
+                                </mat-chip-row>
+                            </mat-chip-grid>
+
+                            <input [matChipInputFor]="chipGrid" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                (matChipInputTokenEnd)="addKeyword($event)" [matChipInputAddOnBlur]="true" type="text"
+                                placeholder=" Enter Keywords" #chipInput>
+                        </mat-form-field>
+                    </div>
+                    <!-- </ng-container> -->
+                </div>
+
+                <div class="original-date">
+                    <label class="form-label">Add Original Date:</label>
+                    <div class="date-picker"></div>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput [matDatepicker]="picker"  formControlName="uploadedAt">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker">
+                            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                        </mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <div class="upload">
+                <button mat-stroked-button color="primary" (click)="upload()">Upload</button>
+            </div>
+
+        </div>
+    </form>
+</div>

@@ -1,0 +1,6 @@
+@import "../../base/colors";
+
+.simple-gray-button { color: $text-color; background: transparent; border: none;
+  &:hover {cursor: pointer;}
+  &:disabled{ color: $grey-light-background; cursor: not-allowed; }
+}

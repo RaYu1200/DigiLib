@@ -1,0 +1,11 @@
+.morph-main-button {background: black; color: white; height: 34px; font-family: Inter-SemiBold, sans-serif; font-size: 14px; border: 1px solid #555657;
+  &.mat-button-disabled {
+    background: #DFDFDF;
+    font-family: Inter-SemiBold, sans-serif;
+    font-size: 14px;
+    color: #A2A9AB !important;
+  }
+}
+
+.morph-secondary-button {background: white; color: #1A1B1E; height: 34px; font-family: Inter-SemiBold, sans-serif; font-size: 14px; border: 1px solid #D8DBE0 !important; border-radius: 4px !important;display: flex !important;
+  align-items: center !important; }

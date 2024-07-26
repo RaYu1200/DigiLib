@@ -1,0 +1,245 @@
+@import "../../styles/helpers/_variables";
+@import "../../styles/base/_default-fonts";
+@import "../../styles/base/_colors";
+
+$primary-default-font: serif;
+$secondary-default-font: sans-serif;
+
+$primary-font: Montserrat + ", " + $secondary-default-font;
+$primary-font-regular: Montserrat-Regular + ", " + $secondary-default-font;
+
+$primary-font-light: Montserrat-Light + ", " + $secondary-default-font;
+$primary-font-medium: Montserrat-Medium + ", " + $secondary-default-font;
+$primary-font-semibold: Montserrat-SemiBold + ", " + $secondary-default-font;
+$primary-font-bold: Montserrat-Bold + ", " + $secondary-default-font;
+
+
+@mixin morphRadio {
+  .p-radiobutton { width: 14px; height: 14px;
+    .p-radiobutton-box { width: 14px; height: 14px;
+      & .p-radiobutton-icon { width: 8px; height: 8px;}
+      &.p-highlight {background-color: $primary-light; border-color: $primary-light;
+        &:not(.p-disabled):hover {background-color: $primary-light; border-color: $primary-light;}
+      }
+      &:not(.p-disabled).p-focus {box-shadow: none;}
+    }
+  }
+  .ui-radiobutton-label {margin-left: 5px; margin-bottom: 0;}
+  .alert { padding: 5px }
+}
+
+
+@mixin morphButton {
+  height: 36px; border-radius: 17.6px; border-width: 0;
+  display: inline-flex; justify-content: center; align-items: center; padding: 0 24px;
+}
+
+@mixin morphUnframedButton {
+  height: auto; border-radius: 0; border: none; background: transparent;
+  display: inline-flex; justify-content: center; align-items: center; padding: 0;
+}
+
+@mixin morphBtnText { font-family: $primary-font-regular; font-size: 16px; line-height: 16px; white-space: nowrap;}
+
+.morphy-h1-bold { font-family: $primary-font-bold; font-size: 20px; line-height: 1.8; text-align: left; color: #34495e;}
+
+.morphy-h2-bold {font-family: $primary-font-semibold; font-size: 16px; line-height: 2.25; text-align: left; color: #34495e;}
+
+.morphy-h3-medium {font-family: $primary-font-regular; font-size: 14px;line-height: 2.57;text-align: left;color: #34495e;}
+
+.morphy-body-Text { font-family: $primary-font-light; font-size: 14px; line-height: 1.57; text-align: left; color: #7b7b7c;}
+
+.morphy-btn { @include morphButton; background-color: #7f2764; /* primary light */
+  @include morphBtnText; color: #ffffff;
+  &:hover { background-color: #6b2054; cursor: pointer; }
+  &:disabled {background-color: #7f2764; cursor: not-allowed; opacity: .7; }
+  &-defender {background-color: $detection-blue;
+    &:hover {background-color: #5780B3;}
+  }
+}
+
+.morphy-secondary-btn { @include morphButton; background-color: #e7e8e8; @include morphBtnText; color: #7f2764; font-family: $primary-font-regular;
+  &:hover { background-color: #f2f2f2; cursor: pointer;}
+}
+
+.morphy-secondary-btn-v2 { @include morphButton; background-color: #e7e8e8; @include morphBtnText; color: #974d80;
+  &:hover { background-color: #eeeeee; cursor: pointer;}
+}
+
+.morphy-textual-button { @include morphUnframedButton;
+  @include morphBtnText; color: #7f2764;
+  border: 1px solid transparent;
+  &:hover {border-bottom: 1px solid #6b2054; color: #6b2054; cursor: pointer; }
+  // &:disabled{color: #e9eaeb; cursor: default; }
+  &:disabled {opacity: .7; cursor: not-allowed; }
+  &:disabled:hover {border-bottom: 1px solid #e9eaeb;}
+}
+
+.morphy-dialog {
+  &-button { @include morphUnframedButton; border-bottom: 1px solid #7f2764;
+    @include morphBtnText; color: #7f2764; border-bottom: 2px solid #7f2764;
+    &:hover {cursor: pointer; }
+    // &:hover{border-bottom: 1px solid #6b2054; color: #6b2054; cursor: pointer; }
+    &:disabled {opacity: .7; cursor: not-allowed; }
+
+  }
+  &-cancel-button { @include morphUnframedButton;
+    @include morphBtnText; color: #363636; padding-bottom: 2px !important;
+    &:hover {cursor: pointer; }
+    // &:hover{ border-bottom: 1px solid #363636; color: #363636; cursor: pointer; }
+  }
+}
+
+// -------- morph tag --------------
+.morph-tag { display: flex; align-items: center; width: auto; height: 25px; padding: 0 4px 0 11px;
+  font-family: $primary-font-regular, $primary-default-font; font-size: 12px; color: #7f2764;
+}
+
+.morph-tag-badge { border-radius: 3px; background-color: #e7e8e8;}
+
+.morph-tag-close-button {margin-right: 7px; color: $input-text-color; cursor: pointer;
+  &:hover {color: #7f2764;}
+}
+
+.morph-tag-clickable { cursor: pointer;
+  &:hover { background: #f2f2f2; color: #7f2764;}
+}
+
+.morph-tag-clickable.morph-tag-selected { background: #7f2764; color: #ffffff;}
+
+.morph-tag-icon { margin-right: 6px; }
+
+.morph-tag-alias { margin-right: 24px;}
+
+:host ::ng-deep {
+  .morph-tag-icon {
+    svg { fill: $primary-light; width: 12px; height: 13px;}
+  }
+  .morph-tag-selected .morph-tag-icon {
+    svg { fill: #fdfdfd}
+  }
+}
+
+//--------------------------------------------------
+
+.morphy-toggle-on { width: 69px; height: 28px; background-color: #50cec1; display: inline-flex; align-items: center;
+  .morphy-toogle-text { height: 10px; line-height: 1.23; color: #ffffff; font-family: $primary-font-light;}
+  .morphy-handle { width: 22px; height: 22px; border-radius: 50%; background-color: #ffffff;}
+}
+
+.morphy-toggle-off { width: 69px; height: 28px; background-color: #dfe0e1; display: inline-flex; align-items: center;
+  .morphy-toogle-text { height: 10px; line-height: 1.23; color: #363636; font-family: $primary-font-light;}
+  .morphy-handle { width: 22px; height: 22px; border-radius: 50%; background-color: #ffffff;}
+}
+
+/* ------------- DROPDOWNS ------------ */
+
+:host ::ng-deep {
+  .morphy-dropdown-wrapper svg {width: 20px; height: 20px;}
+}
+
+.morphy-dropdown-wrapper { display: inline-flex; flex-flow: row nowrap; align-items: center; justify-content: space-between;
+  .morphy-dropdown-caption { font-family: $primary-font-regular; color: #363636; height: 14px; font-size: 14px; line-height: 14px;
+    text-align: right; padding: 0 20px 0 0;
+  }
+
+  .morphy-dropdown { height: $dropdown-height; border-radius: 3px; background-color: #ffffff;
+
+    &:hover { cursor: pointer }
+    // .morphy-dropdown-caret { width: 10px; height: 5px; background-color: #7f2764}
+    // .morphy-dropdown-option{ font-family: $primary-font-light; color: #777777; font-size:14px; height: 10px;  text-align: left; }
+  }
+
+  // .morphy-dropdown-disabled {  height: 28px; border-radius: 3px; background-color: #f8f9fa;
+  //     .morphy-dropdown-caret{ width: 10px; height: 5px; background-color: #7f2764}
+  //     &:hover{ cursor: not-allowed }
+  //     .morphy-dropdown-option{ font-family: $primary-font-light; color: #999999; font-size: 14px; height: 10px;  text-align: left; }
+  // }
+
+  // .morphy-dropdown-static {  height: 28px; border-radius: 3px; background-color: #f8f9fa;
+  //     .morphy-dropdown-caret{ width: 10px; height: 5px; background-color: #7f2764}
+  //     &:hover{ cursor: not-allowed }
+  //     .morphy-dropdown-option{ font-family: $primary-font-light; color: #777777; font-size: 14px; height: 10px;  text-align: left; }
+  // }
+
+  .morphy-dropdown-reset-button { width: 20px; height: 20px; cursor: pointer; margin-left: 10px; line-height: 14px; }
+
+}
+
+.morphy-disabled { cursor: auto; pointer-events: none; opacity: .5;}
+
+/* --------------------- column selector: ----------------------------->   */
+
+.morph-column-selector-header { border-bottom: 1px solid #d4d4d4; white-space: nowrap; color: $dropdown-option-text-color;
+  font-family: $primary-font-regular, $secondary-default-font; text-align: center; padding: 0 10px 8px 10px; margin-bottom: 10px;
+}
+
+/* --------------------- check box:  ----------------------------->   */
+
+.morphy-checkbox { width: 14px; height: 14px; border: 1.9px solid #cccccc; background-color: #ffffff;
+  &:hover { border: 1.9px solid #50cec1; }
+}
+
+.morphy-checkbox-selected { width: 14px; height: 14px; border: 1.9px solid #cccccc; background-color: #50cec1;
+  /* need to add a content ... */
+  &:hover { border: 1.9px solid #50cec1; }
+}
+
+/* icons */
+:host ::ng-deep {
+  .morphy-back-button-icon { margin: -2px 8px 0 0;
+    svg {fill: #6b2e58; width: 12px; height: 11px;}
+  }
+}
+
+// --- HELPERS -------------------
+
+.morph-flex-space {
+  width: 1px;
+  height: 1px;
+  flex: 1 1 auto;
+}
+
+.morph-ellipsis{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.morph-loading {
+  width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; position: absolute; z-index: 100; top: 0; left: 0;
+}
+
+.morph-aria-disable{ pointer-events: none; opacity: .5; cursor: default;}
+
+.morph-align-center{ display: flex; align-items: center;}
+.morph-centered{ display: flex; justify-content: center; align-items: center;}
+
+.morph-blank-button{
+  background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;
+}
+// MEDIA QUERIES :
+
+.morph-show-on-large {
+  @media  #{$mini-view} {display: none !important;}
+  @media  #{$small-view} {display: none !important;}
+  @media  #{$medium-view} {display: none !important;}
+}
+
+.morph-show-on-mediume {
+  @media  #{$mini-view} {display: none !important;}
+  @media  #{$small-view} {display: none !important;}
+  @media  #{$large-view} {display: none !important;}
+}
+
+.morph-show-on-mediume-up {
+  @media  #{$mini-view} {display: none !important;}
+  @media  #{$small-view} {display: none !important;}
+}
+
+.morph-show-on-mediume-down {
+  @media  #{$large-view} {display: none !important;}
+}
+
+
+

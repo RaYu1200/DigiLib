@@ -1,0 +1,15 @@
+<mat-card class="card-wrapper">
+
+    <mat-card-content>
+        <div class="content">
+            <div class="image">
+                <img mat-card-image [src]="'assets/icons/' + type + '.png'" width="40px" height="45px">
+                
+            </div>
+            <div class="filename">{{_fileName}}</div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="download()">Download</button>
+    </mat-card-actions>
+</mat-card>

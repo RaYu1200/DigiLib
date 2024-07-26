@@ -1,0 +1,27 @@
+.card-wrapper {
+    width: 100%;
+    // max-width: 400px;
+
+    ::ng-deep{
+        .mat-mdc-card-content{
+            padding-top: 10px;
+        }
+
+        .mat-mdc-card-actions{
+            padding: 0px 16px !important;
+        }
+    }
+
+    .content {
+        display: flex;
+
+        .image {
+            padding: 0 20px;
+        }
+    }
+}
+
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}

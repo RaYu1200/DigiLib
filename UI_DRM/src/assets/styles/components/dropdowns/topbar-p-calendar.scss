@@ -1,0 +1,17 @@
+@import "../../base/colors";
+@import "../../base/default-fonts";
+@import "../../helpers/_variables";
+
+:host ::ng-deep {
+  .p-calendar{
+    .ui-state-active{ background-color: $primary-light !important; }
+    .ui-button { left: 78%;
+    }
+    .ui-inputtext{ border: 1px solid #d6d6d6; font-weight: normal; font-size: 13px; font-family: $primary-font-light, $primary-default-font; width: auto; border-radius: $input-radius ; padding: 3px 7px; cursor: pointer;
+      &:focus{ border-color: $primary-light; border-radius: $input-radius; box-shadow: none;}
+    }
+    .p-datepicker-trigger,
+    .p-datepicker-trigger:enabled:hover { background-color: transparent; border-color: transparent; border: none !important; }
+    .p-button-icon { color: $primary-light; font-size: 16px; }
+  }
+}

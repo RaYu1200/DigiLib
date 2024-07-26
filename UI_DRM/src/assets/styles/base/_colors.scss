@@ -1,0 +1,184 @@
+// new colors
+$primary-light: #7f2764;
+$primary-dark: #6b2054;
+
+
+$secondary-red: #d04a58;
+$secondary-green: #64d2b1;
+$secondary-yellow: #fca05d;
+
+$background-grey-light: #f8f9fa;
+$background-dark: #07263b;
+$background-highlight: #eeeeee;
+$background-white: #fdfefe;
+$background-shell:  #eeeeee; // rgba(0,0,0,0);
+
+$text-color: #313131;
+$text-muted-color: #b6babe;
+$input-text-color: #777777;
+$dropdown-text-color: #777777;
+$dropdown-option-text-color: #84888c;
+
+$button-text-color: #363636;
+
+$grey-light-background: #e9eaeb;
+$grey-dark-background: #3d5465;
+$grey-light: #dfe0e1;
+
+// need to add
+$grey: #c8c8c8;
+$grey-3-dot: #c0c0c0;
+$topbar-3-dot: #656565;
+$grey-dark: #9a9a9a;
+$grey-icons: #84888c;
+$text-color: #212121;
+$toast-attention: #40505f;
+
+// topbar
+$global-filter-color: #303d4a;
+
+// app widget
+$app-widget-background: #e7e8e8;
+$app-widget-selected: #f2f2f2;
+
+//Widgets
+$morph-widget-marker-gradient-hover: rgb(116, 116, 116);
+$morph-widget-hover: rgb(126, 126, 126);
+
+//Datatable
+$morph-pagination-disabled: rgb(85, 85, 85);
+$datatable-header-background: #f3f3f3;
+
+//Dialog
+$morph-dialog-shadow: rgba(0, 0, 0, .27);
+$morph-dialog-overlay-shadow: rgba(49, 57, 68, .9);
+
+//action-menu
+$morph-action-menu-item-color: #84888c;
+$morph-action-menu-item-hover-color:#7f2764;
+$morph-action-menu-item-disabled-color: #e0e1e2;
+$morph-action-menu-item-troubleshoot-disabled-background-color: #f8f8f8;
+//Box
+$morph-box-shadow: rgba(0, 0, 0, .21);
+
+//Buttons
+$morph-orange-button-disabled: rgb(116, 116, 116);
+$morph-orange-button-disabled-text: rgb(255, 195, 167);
+
+// Atacks Page
+$attacks-page-background: white;
+$attacks-page-topbar-bg: #eeeeee;
+$attacks-page-topbar-title: #f8f9fa;
+$attacks-page-topbar-badge-button-bg: #aa5791;
+$attacks-page-topbar-date-filter-text: #eef0f1;
+$attacks-page-top-attacks-selected-underline: #aa5791;
+$attack-list-background: #F9F9FA;
+
+// Attacks Distribution Tables
+$progressbar-sliced-and-selected: rgb(188, 104, 37);
+$dist-table-item: #d8d9da;
+$dist-table-header-background: white;
+$dist-table-list-background: white;
+$dist-table-border: rgba(33, 33, 33, .15);
+$dist-table-selected-item-from: #932d6e;
+$dist-table-selected-item-to: #ed8b84;
+$dist-table-item-count-progressbar: #d8d9da;
+$dist-table-item-count-progressbar-value: #707070;
+$dist-table-item-sliced-progressbar-value: #aa5791;
+$dist-table-item-hover-sliced-color: #932d6e;
+$dist-table-item-selected-icon-color: #ffffff;
+$dist-table-item-selected-text-color: #ffffff;
+
+// threats details page:
+$morph-review-banner-text: #34495e;
+
+//reports
+$morph-reports-email-invalid: rgb(255, 189, 189);
+$morph-reports-test-email-invalid: rgb(204, 204, 204);
+$morph-reports-email-remove-disabled: rgb(204, 204, 204);
+
+
+// dashboard widgets (attacks and apps graph):
+$header-line-divider-color: #c3c3c3;
+$header-graph-color: #303d4a;
+
+$dashboard-attacked-apps-main-color: #7f2764;
+$dashboard-protected-apps-main-color: #73879b;
+
+$dashboard-top-detections-counts: #618ab3;
+$dashboard-top-protected-counts: #798490;
+
+// dashboard require-handling
+$dashboard-require-handling-bg-color: #dadbdf;
+$dashboard-require-handling-banner-color: #c67077;
+$dashboard-require-handling-banner-color-empty: #b6989a;
+$dashboard-require-handling-font-color: #c67077;
+$dashboard-require-handling-font-color-empty: #b6989a;
+
+// Navbar
+$navbar-grey: #8d99a6;
+$navbar-active: #F0BBA9;
+$navabar-item-color : #8D99A6;
+$navabar-selected-item-color : #F0BBA9;
+$navabar-hover-item-color : #b5bfca;
+$navabar-item-border-color: #3d5262;
+$navbar-all-rights-reserved-color: #576778;
+
+
+// settings
+$tab-title: #303d4a;
+$tab-title-selected: $primary-light;
+
+
+// checkbox
+$checkbox-backgorund: white;
+$checkbox-hover: #50cec1;
+$checkbox-selected: #50cec1;
+
+// slider
+$slider-checked: #50cec1;
+
+// detections
+$detection-blue: #618ab3;
+$detections-page-bg: white;
+$detections-topbar-invert-bg: #3f4b57;
+$detections-topbar-title-color: #f8f9fa;
+$detections-topbar-date-filter-text-color: #eef0f1;
+
+// customers   (mss)
+$status-expired-bg: #d8d9da;  // need to update for real color
+$status-active-bg: #64d2b1;  // need to update for real color
+
+$customer-row-background: #fcfdfd;
+$customer-row-period-background: #e5e6e7;
+
+
+
+// global styles:
+$text-mute-color: #8d9195;
+$background-light: #f8f9fa;
+
+
+// central update colors:
+
+// activity table
+$activity-table-header-text: #8d9195;
+$activity-table-header-sort-icon: #6b2e58;
+$activity-table-cards-text: #363636;
+$activity-table-cards-text-bold: #34495e;
+$activity-table-progress-bar-boarder-failed: #d04a58;
+$activity-table-progress-bar-background-half-full: #fcfdfd;
+$activity-table-progress-bar-gradient-from: #c079aa;
+$activity-table-progress-bar-gradient-to: #974d80;
+$activity-table-progress-bar-border-main: #974d80;
+$activity-table-progress-bar-background-strips: #cc9fbe;
+$activity-table-progress-bar-background-main: #e2e3e4;
+$activity-table-progress-bar-border-regular: #e2e3e4;
+$activity-table-progress-bar-background-regular: #f0f1f2;
+
+// activity table extra info
+$activity-table-extra-info-background: #f3f3f3;
+$activity-table-extra-info-text: #363636;
+
+//dashboard table
+$dashboard-table-column : #1A1B1E
